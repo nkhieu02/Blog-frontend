@@ -23,4 +23,4 @@ const Error = ({ message }) => {
         )
     }
 }
-export default Error;
+export default Error
