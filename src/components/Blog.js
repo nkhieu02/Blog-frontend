@@ -27,15 +27,15 @@ const Blog = ({ blog, setBlogs, blogs }) => {
     setBlogs(blogs.filter(x => x.id !== id))
   }
   return (
-    <div style={blogStyle} >
+    <div style={blogStyle} className='blog' >
       <div style={hidden} className='viewabel'>
-        <p>{blog.title} {blog.author} <button onClick={setToogle}>view</button></p>
+        <p>{blog.title} {blog.author} <button onClick={setToogle} className="View">view</button></p>
       </div>
       <div style={view} className='notViewable'>
         <p>{blog.title} <button onClick={setToogle}>hide</button></p>
         <p>{blog.author}</p>
-        <p id='likes'>{blog.likes} </p>
-        <button onClick={() => updateLikes({ id: blog.id, likes: blog.likes + 1 })}>upVote</button>
+        <p className='likes'>{blog.likes} </p>
+        <button className='UpVote' onClick={() => updateLikes({ id: blog.id, likes: blog.likes + 1 })}>upVote</button>
         <p>{blog.url}</p>
         <button onClick={() => { if (window.confirm(`Remove blog ${blog.title}`)) { deleteBlog(blog.id) } }}>Delete</button>
       </div>
